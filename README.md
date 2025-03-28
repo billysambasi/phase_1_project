@@ -101,6 +101,28 @@ Types of Damage
 
 - The business should consider investing in aircraft with advanced safety features e.g. fire supression systems and effective evacuation mechanisms. This would improve passenger safety and reduce the likelihood of catastrophic losses in the event of an incident. 
 
-[index.ipynb file]()
-[Tableau Project Dashboards]()
-[PowerPoint presentation]()
+### Conclusions 
+
+- The business should consider prioritizing low-risk aircraft models as they are the safest options for the business to invest in.
+
+- The business should emphasize reliable engine types as they are critical for ensuring operational safety and minimizing maintenance costs.
+
+- The business should consider investing in weather-resilient aircraft and training pilots to handle challenging conditions to reduce weather-related risks and ensure safer operations.
+
+- The business should consider investing in advanced safety features like fire suppression systems and effective evacuation mechanisms better equipped to handle emergencies. 
+
+[GitHub]()
+[Tableau Project Dashboards](https://tinyurl.com/projectdashboards) 
+
+### Project Folder Structure
+
+phase_1_project/
+├── data/
+│   ├── cleaned_data/     	# Cleaned datasets
+│   ├── raw_data/         	# Uncleaned datasets
+├── embedded_images/		# Images embedded in the README.md file
+├── .gitignore             	# Git ignore file
+├── index					# Project file 
+├── LICENSE               	# License for the project
+├── project_presentation 	# Project PowerPoint presentation
+├── README.md          		# Project documentation

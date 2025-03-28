@@ -1,1 +1,4 @@
-# Ignore all files in the raw data f
+# Ignore all files in the .idea folder
+.idea/*
+# Ignore the .ipynb_checkpoints folder
+.ipynb_checkpoints
