@@ -111,7 +111,7 @@ Types of Damage
 
 - The business should consider investing in advanced safety features like fire suppression systems and effective evacuation mechanisms better equipped to handle emergencies. 
 
-[GitHub]()
+[GitHub](https://github.com/billysambasi/phase_1_project.git)
 [Tableau Project Dashboards](https://tinyurl.com/projectdashboards) 
 
 ### Project Folder Structure
