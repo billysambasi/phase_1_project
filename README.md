@@ -1,128 +1,146 @@
-# Project Exploratory Data Analysis
+# Aviation Accident Risk Analysis Project
 
 ## Description of the Project
 
-The project focuses on enabling the company's entry into the aviation industry by analyzing data to identify aircraft that pose the lowest operational and safety risks. The goal is to provide data-driven insights into aircraft models, incident rates and failure points including environmental factors such as weather conditions and locations. By assessing historical safety records, incidents and trends in failure types, this analysis creates comprehensive risk profiles for various aircraft. The findings aim to guide the aviation division in selecting aircraft that are not only safe but also operationally reliable, minimizing risks and maximizing efficiency in the new venture. 
+The project focuses on enabling the company's entry into the aviation industry by analyzing data to identify aircraft that pose the lowest operational and safety risks. The goal is to provide data-driven insights into aircraft models, incident rates and failure points including environmental factors such as weather conditions and locations. By assessing historical safety records, incidents and trends in failure types, this analysis creates comprehensive risk profiles for various aircraft. The findings aim to guide the aviation division in selecting aircraft that are not only safe but also operationally reliable, minimizing risks and maximizing efficiency in the new venture.
 
-In addition, the project will explore how aircraft perform under diverse operational environments, factoring in weather conditions to evaluate resilience and adaptability. By investigating correlation between aircraft quality including make, model, engine type and number of engines and their safety, it uncovers key indicators for selecting durable and dependable aircraft. The project then translates analytical results to actionable recommendations that align with the company's strategic goals ensuring a successful and informed expansion into aviation.
-
-## The Business Questions
-1. How have the number of aviation accidents changed over the years?
-2. Which aircraft models are involved in the most incidents and are certain engine types associated with higher incident rates?
-3. Are certain weather conditions more likely to result in severe injuries or fatalities?
-4. What are the most common types of aircraft damage in accidents?
+## Business Questions
+1. How have aviation accident trends evolved over time, and what do they indicate about industry safety?
+2. Which aircraft models and engine types are most frequently involved in incidents?
+3. What weather conditions are most associated with high-severity aviation accidents?
+4. What types of aircraft damage occur most commonly in accidents, and what are their operational implications?
 
 ## Project Objectives
 
-- Analyze accident trends to understand aviation risks over time.
-- Determine the safest aircraft models and engine types.
-- Evaluate the impact of weather conditions on aircraft safety.
-- Assess aircraft damage patterns to identify durable and reliable models.
+- Understand historical trends in aviation accidents
+- Determine which aircraft models and engine types are most frequently involved in incidents
+- Assess the influence of weather conditions on accident severity
+- Identify the most common types of aircraft damage
 
-## Project Analysis Steps
+## Modelling Objectives
 
-1. Loading and Understanding the Data
-    - Importing the data with the necessary libraries
-    ![](embedded_images/importing_libs.png)
-    - Recognising the rows and columns of the dataset, inspecting for duplicates and identifying missing values.
-2. Cleaning and Normalizing the Data
-    - Dropping, replacing and filling missing values.
+- Predict the severity of an aviation accident
+- Classify the likely type of aircraft damage
+- Predict the likelihood of fatality/injury based on conditions
+- Identify high-risk aircraft or conditions
+- (For consideration) Recommender system to suggest safer aircraft configurations or operating conditions — based on learned patterns.
 
-    ![](embedded_images/dealing_with_missing_values.png)
+## Data Analysis Process
 
-    - Adding necessary columns for derived features. 
+### 1. Data Loading and Understanding
+- Imported necessary libraries for data analysis and visualization
+- Loaded the AviationData.csv file with proper encoding (latin-1) and memory optimization
+- Examined dataset structure: 88,889 entries with 31 columns
+- Identified data types and missing values patterns
+- No duplicate rows found
 
-3. Data Visualization and Analysis
+### 2. Data Cleaning and Preprocessing
+- Filtered data from 1982 onwards due to significant changes in aviation industry
+- Standardized aircraft make names (converted to title case and stripped whitespace)
+- Created derived features:
+  - Year and Month columns from Event.Date
+  - Total.Injuries column combining all injury types
+- Handled missing values appropriately for analysis
+- Identified and analyzed outliers in injury data
 
-    Objective 1: Analyze accident trends to understand aviation risks over time. 
+### 3. Exploratory Data Analysis
 
-    ![](embedded_images/objective_1_sample_1.png)
+#### Objective 1: Historical Trends in Aviation Accidents
+- **Yearly Trends**: Analyzed accident frequency over time showing general decline
+- **Monthly Trends**: Identified seasonal patterns with higher incidents in summer months (June, July, August)
+- **Flight Phase Analysis**: Examined accidents by phase of flight
+- **Fatal Injuries Over Time**: Tracked fatality trends across years
 
-    Objective 2: Determine the safest aircraft models and engine types.
+#### Objective 2: Aircraft Models and Engine Types Analysis
+- **Top Aircraft Makes**: Identified Cessna, Piper, and Beechcraft as most frequently involved
+- **Aircraft Models**: Analyzed specific models with highest incident rates
+- **Engine Types**: Examined reciprocating engines as most common in incidents
+- **Damage vs Injuries**: Analyzed relationship between aircraft damage and injury severity
 
-    ![](embedded_images/objective_2_sample_1.png)
+#### Objective 3: Weather Conditions Impact
+- **Weather Distribution**: Found majority of accidents occur in clear weather conditions
+- **Severity Analysis**: Examined relationship between weather and accident outcomes
 
-    ![](embedded_images/objective_2_sample_2.png)
-
-    Objective 3: Evaluate the impact of weather conditions on aircraft safety
-    
-    ![](embedded_images/objective_3_sample_1.png)
-
-    Objective 4: Assess aircraft damage patterns to identify durable and reliable models
-    
-    ![](embedded_images/objective_4_sample_1.png)
+#### Objective 4: Aircraft Damage Patterns
+- **Damage Types**: Analyzed distribution of damage categories (Destroyed, Substantial, Minor, Unknown)
+- **Operational Implications**: Connected damage patterns to safety considerations
 
 
-## Findings 
+## Key Findings
 
-### Objective 1: Analyze Accident Trends over time
+### Accident Trends
+- **Declining Trend**: Overall reduction in accidents over time, likely due to improved safety measures and technology
+- **Seasonal Patterns**: Higher accident rates during summer months, possibly due to increased air traffic
+- **Clear Weather Paradox**: Most accidents occur in clear weather, suggesting human error or mechanical failure as primary factors
 
-Yearly Trends
+### Aircraft and Engine Analysis
+- **High-Volume Aircraft**: Cessna, Piper, and Beechcraft show high incident numbers, likely due to their popularity in general aviation
+- **Engine Types**: Reciprocating engines most commonly involved, reflecting their prevalence in smaller aircraft
+- **Model-Specific Risks**: Certain models show higher incident rates that may indicate design or operational considerations
 
-- There was a decline in the number of accidents over the years which may be due to improvements in the aviation safety measures and procedures or advancements in technology
-
-Monthly Trends
-
-- Certain months may have had higher accident rates possibly due to the seasons for example the summer seasons in June, July and August months. 
-- Months with fewer accidents may indicate periods of reduced air traffic or favorable weather conditions. 
-
-### Objective 2: Identify Aircraft Models with the most Incidents
-
-Aircraft Makes 
-- Particular makes may have had a higher rate of accidents which could be due to their regular use and popularity.
-
-Aircraft Models
-- Certain models may have significantly higher incident rates which could be due to their popularity or design issues.
-- Models with fewer incidents may indicate better safety records or less frequent use.
-
-Engine Types
-- Specific engine types may be associated with higher incident rates possibly due to mechanical sophistication, maintenance problems or certain operational conditions.
-- Engine types with fewer incidents may indicate better realibility or suitability for certain conditions.
-
-### Objective 3: Investigate the Impact of Weather Conditions
-
-Weather Conditions
-- A large proportion of accidents occuring under clear weather conditions may suggest that human error or mechanical failure is a significant factor.
-- Higher accident rates under adverse weather conditions may highlight the need for better weather forecasting, pilot training or equipment upgrades. 
- 
-### Objective 4: Analyze Aircraft Damage Patterns
-
-Types of Damage
-- Certain types of damage e.g. 'Destroyed' dominatig the dataset may indicate the severity of many incidents.
-- Less severe damage e.g. 'Substantial' may suggest incidents where safety measures or emergency responses were effective in minimizing harm. 
+### Weather and Damage Patterns
+- **Weather Impact**: Clear weather conditions dominate accident scenarios
+- **Damage Severity**: Analysis reveals patterns between damage types and injury outcomes
+- **Operational Factors**: Flight phase analysis shows critical periods for safety 
 
 ## Recommendations
 
-- The business should focus on low-risk aircraft models with the lowest incident rates and have a history of realibity. They should consider avoiding models with high incident rates unless there are mitigation strategies in place. These would reduce operational risks and build trust with clients by prioritizing safer aircraft models.
+### Aircraft Selection Strategy
+1. **Focus on Low-Risk Models**: Prioritize aircraft with historically lower incident rates
+2. **Engine Type Considerations**: Evaluate engine reliability records when selecting aircraft
+3. **Comprehensive Safety Assessment**: Consider multiple factors including make, model, and engine type
 
-- The business should consider focusing on engine types with low incident rates and can be realible and should implement predictive maintenance systems to monitor engine performance and prevent failures. These would minimize downtime and maintenance costs while ensuring operational safety and realibility. 
+### Operational Safety Measures
+1. **Enhanced Training**: Implement comprehensive pilot training programs, especially for clear weather operations
+2. **Seasonal Awareness**: Increase safety protocols during high-risk summer months
+3. **Maintenance Programs**: Establish robust maintenance schedules based on aircraft-specific risk profiles
 
-- The business should choose aircraft equipped with advanced weather detection systems and avionics to handle adverse weather conditions effectively. This would reduce weather-related risks and ensure safer operations in diverse environmental conditions. 
+### Risk Management
+1. **Data-Driven Decisions**: Use historical accident data to inform aircraft acquisition decisions
+2. **Continuous Monitoring**: Establish systems to track safety performance of fleet aircraft
+3. **Emergency Preparedness**: Develop protocols based on common accident scenarios and damage patterns
 
-- The business should consider investing in aircraft with advanced safety features e.g. fire supression systems and effective evacuation mechanisms. This would improve passenger safety and reduce the likelihood of catastrophic losses in the event of an incident. 
+## Technical Implementation
 
-### Conclusions 
+### Tools and Libraries Used
+- **Data Analysis**: pandas, numpy
+- **Visualization**: matplotlib, seaborn
+- **Machine Learning**: scikit-learn, xgboost, lightgbm
+- **Model Evaluation**: Various metrics and cross-validation techniques
+- **Jupyter Environment**: jupyterlab, ipykernel
 
-- The business should consider prioritizing low-risk aircraft models as they are the safest options for the business to invest in.
+### Data Processing Pipeline
+1. **Data Ingestion**: Loaded and validated aviation accident data
+2. **Data Cleaning**: Standardized formats, handled missing values, created derived features
+3. **Exploratory Analysis**: Comprehensive statistical and visual analysis
+4. **Feature Engineering**: Created relevant features for modeling objectives
+5. **Visualization**: Generated insights through various chart types and statistical summaries 
 
-- The business should emphasize reliable engine types as they are critical for ensuring operational safety and minimizing maintenance costs.
+## Project Structure
 
-- The business should consider investing in weather-resilient aircraft and training pilots to handle challenging conditions to reduce weather-related risks and ensure safer operations.
-
-- The business should consider investing in advanced safety features like fire suppression systems and effective evacuation mechanisms better equipped to handle emergencies. 
-
-[GitHub](https://github.com/billysambasi/phase_1_project.git)
-[Tableau Project Dashboards](https://public.tableau.com/app/profile/billy.sambasi/viz/ProjectDashboards_17429896470220/Story1) 
-
-### Project Folder Structure
-
+```
 phase_1_project/
 ├── data/
-│   ├── cleaned_data/     	# Cleaned datasets
-│   ├── raw_data/         	# Uncleaned datasets
-├── embedded_images/		# Images embedded in the README.md file
-├── .gitignore             	# Git ignore file
-├── index					# Project file 
-├── LICENSE               	# License for the project
-├── project_presentation 	# Project PowerPoint presentation
-├── README.md          		# Project documentation
+│   ├── cleaned_data/     # Processed datasets
+│   ├── raw_data/         # Original aviation data
+├── embedded_images/      # Visualization outputs
+├── .gitignore           # Git ignore file
+├── index.ipynb          # Main analysis notebook
+├── utils.py             # Utility functions for data processing
+├── LICENSE              # Project license
+├── project_presentation # Project presentation materials
+└── README.md            # Project documentation
+```
+
+## Future Enhancements
+
+1. **Predictive Modeling**: Implement machine learning models to predict accident severity
+2. **Real-time Monitoring**: Develop systems for ongoing safety assessment
+3. **Interactive Dashboards**: Create dynamic visualizations for stakeholder use
+4. **External Data Integration**: Incorporate weather, maintenance, and operational data
+5. **Recommendation Engine**: Build system to suggest optimal aircraft configurations
+
+## Links
+
+- [GitHub Repository](https://github.com/billysambasi/phase_1_project.git)
+- [Tableau Project Dashboards](https://public.tableau.com/app/profile/billy.sambasi/viz/ProjectDashboards_17429896470220/Story1)
