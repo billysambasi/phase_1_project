@@ -110,35 +110,72 @@ The project focuses on enabling the company's entry into the aviation industry b
 - **Jupyter Environment**: jupyterlab, ipykernel
 
 ### Data Processing Pipeline
-1. **Data Ingestion**: Loaded and validated aviation accident data
+1. **Data Ingestion**: Loaded and validated aviation accident data (88,889 records)
 2. **Data Cleaning**: Standardized formats, handled missing values, created derived features
 3. **Exploratory Analysis**: Comprehensive statistical and visual analysis
-4. **Feature Engineering**: Created relevant features for modeling objectives
-5. **Visualization**: Generated insights through various chart types and statistical summaries 
+4. **Feature Engineering**: Prepared ML-ready features for damage prediction modeling
+5. **Visualization**: Generated insights through various chart types and statistical summaries
+
+### 4. Feature Engineering for Machine Learning
+- **Dataset Preparation**: Processed 88,882 records for modeling
+- **Feature Selection**: Selected 9 key features including:
+  - Aircraft specifications (Make, Model, Engine Type)
+  - Environmental factors (Weather Condition)
+  - Operational factors (Flight Phase, Purpose of Flight, Amateur Built)
+  - Temporal features (Month, Year)
+- **Encoding**: Applied label encoding to categorical variables
+- **Target Variable**: Aircraft damage classification (Substantial, Destroyed, Minor, Unknown)
+- **Train-Test Split**: Created stratified 80-20 split (71,105 training samples)
+- **Output Files**:
+  - `aviation_features.csv`: Feature-engineered dataset
+  - `model_damaged.pkl`: Serialized train-test splits and encoders 
 
 ## Project Structure
 
 ```
 phase_1_project/
 ├── data/
-│   ├── cleaned_data/     # Processed datasets
-│   ├── raw_data/         # Original aviation data
-├── embedded_images/      # Visualization outputs
-├── .gitignore           # Git ignore file
-├── index.ipynb          # Main analysis notebook
-├── utils.py             # Utility functions for data processing
-├── LICENSE              # Project license
-├── project_presentation # Project presentation materials
-└── README.md            # Project documentation
+│   ├── aviation_features.csv      # Feature-engineered dataset for ML
+│   ├── CleanedAviationData.csv    # Cleaned aviation dataset
+│   └── model_damaged.pkl          # Pickled train-test splits and encoders
+├── misc/
+│   ├── embedded_images/           # Images embedded in documentation
+│   ├── index_files/               # Generated visualization outputs
+│   └── project_presentation.pdf   # Project presentation
+├── .gitattributes                 # Git attributes configuration
+├── .gitignore                     # Git ignore file
+├── exploratory_data_analysis.ipynb # EDA notebook
+├── feature_engineering.ipynb      # Feature engineering for ML models
+├── index.ipynb                    # Main analysis notebook
+├── LICENSE                        # Project license
+├── README.md                      # Project documentation
+├── requirements.txt               # Python dependencies
+└── utils.py                       # Utility functions for data processing
 ```
+
+## Current Progress
+
+### Completed
+- ✅ Data loading and understanding (88,889 records)
+- ✅ Data cleaning and preprocessing
+- ✅ Comprehensive exploratory data analysis
+- ✅ Feature engineering pipeline for ML models
+- ✅ Train-test split preparation (71,105 training samples)
+- ✅ Label encoding for categorical features
+- ✅ Data serialization for model training
+
+### In Progress
+- 🔄 Machine learning model development for damage prediction
+- 🔄 Model evaluation and optimization
 
 ## Future Enhancements
 
-1. **Predictive Modeling**: Implement machine learning models to predict accident severity
-2. **Real-time Monitoring**: Develop systems for ongoing safety assessment
-3. **Interactive Dashboards**: Create dynamic visualizations for stakeholder use
-4. **External Data Integration**: Incorporate weather, maintenance, and operational data
-5. **Recommendation Engine**: Build system to suggest optimal aircraft configurations
+1. **Predictive Modeling**: Complete implementation of ML models for damage classification
+2. **Model Evaluation**: Comprehensive performance metrics and cross-validation
+3. **Real-time Monitoring**: Develop systems for ongoing safety assessment
+4. **Interactive Dashboards**: Create dynamic visualizations for stakeholder use
+5. **External Data Integration**: Incorporate weather, maintenance, and operational data
+6. **Recommendation Engine**: Build system to suggest optimal aircraft configurations
 
 ## Links
 
