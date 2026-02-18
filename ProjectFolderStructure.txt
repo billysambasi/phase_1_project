@@ -1,0 +1,22 @@
+# Project Folder Structure
+
+Here's an overview of the project structure:
+
+phase_1_project/
+├── data/
+│   ├── aviation_features.csv      # Feature-engineered dataset for ML
+│   ├── CleanedAviationData.csv    # Cleaned aviation dataset
+│   └── model_damaged.pkl          # Pickled train-test splits and encoders
+├── misc/
+│   ├── embedded_images/           # Images embedded in documentation
+│   ├── index_files/               # Generated visualization outputs
+│   └── project_presentation.pdf   # Project presentation
+├── .gitattributes                 # Git attributes configuration
+├── .gitignore                     # Git ignore file
+├── exploratory_data_analysis.ipynb # EDA notebook
+├── feature_engineering.ipynb      # Feature engineering for ML models
+├── index.ipynb                    # Main analysis notebook
+├── LICENSE                        # Project license
+├── README.md                      # Project documentation
+├── requirements.txt               # Python dependencies
+└── utils.py                       # Utility functions for data processing
